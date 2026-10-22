@@ -12,7 +12,7 @@ export const Route = createFileRoute("/product/$slug")({
     let product = null;
     try {
       const live = await fetchProductBySlugOrSkuFn({ data: params.slug });
-      if (live && (live.stock || 0) > 0) {
+      if (live) {
         registerLiveProducts([live]);
         product = live;
       }
@@ -20,11 +20,11 @@ export const Route = createFileRoute("/product/$slug")({
       console.error("Failed to load product by slug/SKU from ERP:", err);
     }
 
-    if (!product || (product.stock || 0) <= 0) {
+    if (!product) {
       product = getProduct(params.slug);
     }
 
-    if (!product || (product.stock || 0) <= 0) throw notFound();
+    if (!product) throw notFound();
     return { product };
   },
   head: ({ loaderData }) => {

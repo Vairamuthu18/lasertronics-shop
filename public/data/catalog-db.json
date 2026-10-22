@@ -57,6 +57,32 @@
   ],
   "products": [
     {
+      "sku": "123456",
+      "slug": "fs-123456",
+      "name": "FS",
+      "categoryId": "accessories",
+      "basePrice": 100,
+      "markupPercentage": 15,
+      "isPriceOverridden": false,
+      "overridePrice": null,
+      "sellingPrice": 115,
+      "image": "/assets/p/psu-module.jpg",
+      "stock": 25,
+      "blurb": "FS genuine component.",
+      "specs": [
+        {
+          "label": "Warranty",
+          "value": "6 Months"
+        },
+        {
+          "label": "Condition",
+          "value": "Brand New"
+        }
+      ],
+      "createdAt": "2026-10-21T17:01:47.970Z",
+      "updatedAt": "2026-10-21T17:01:47.970Z"
+    },
+    {
       "sku": "13069",
       "slug": "w-green-3mm-super-13069",
       "name": "-W/GREEN 3MM SUPER",
@@ -5021,38 +5047,30 @@
       "updatedAt": "2026-10-22T04:46:02.927Z"
     },
     {
-      "sku": "13902",
-      "slug": "1-883-300-21-13902",
-      "name": "1-883-300-21",
-      "categoryId": "electronics",
-      "basePrice": 500,
+      "sku": "13578",
+      "slug": "65w-13578",
+      "name": "65W",
+      "categoryId": "accessories",
+      "basePrice": 100,
       "markupPercentage": 15,
       "isPriceOverridden": false,
       "overridePrice": null,
-      "sellingPrice": 575,
+      "sellingPrice": 115,
       "image": "/assets/p/psu-module.jpg",
-      "stock": 2,
-      "blurb": "1-883-300-21 (Pc(s)). Genuine InTouch POS inventory. SKU: 13902",
+      "stock": 25,
+      "blurb": "65W genuine component.",
       "specs": [
         {
-          "label": "SKU",
-          "value": "13902"
+          "label": "Warranty",
+          "value": "6 Months"
         },
         {
-          "label": "Unit",
-          "value": "Pc(s)"
-        },
-        {
-          "label": "Availability",
-          "value": "In Stock"
-        },
-        {
-          "label": "Variation",
-          "value": "DUMMY"
+          "label": "Condition",
+          "value": "Brand New"
         }
       ],
       "createdAt": "2026-10-17T15:52:09.813Z",
-      "updatedAt": "2026-10-22T04:46:02.927Z"
+      "updatedAt": "2026-10-21T15:24:59.014Z"
     },
     {
       "sku": "13578",
@@ -17802,7 +17820,7 @@
         }
       ],
       "createdAt": "2026-10-17T15:52:09.813Z",
-      "updatedAt": "2026-10-22T04:46:02.927Z"
+      "updatedAt": "2026-10-20T04:36:07.089Z"
     },
     {
       "sku": "1238",
@@ -152442,7 +152460,7 @@
         }
       ],
       "createdAt": "2026-10-17T15:52:09.813Z",
-      "updatedAt": "2026-10-22T04:46:02.927Z"
+      "updatedAt": "2026-10-20T04:36:07.089Z"
     },
     {
       "sku": "9INCH",
@@ -159786,7 +159804,7 @@
         }
       ],
       "createdAt": "2026-10-17T15:52:09.813Z",
-      "updatedAt": "2026-10-22T04:46:02.927Z"
+      "updatedAt": "2026-10-20T04:36:07.089Z"
     },
     {
       "sku": "2116",
@@ -341754,7 +341772,7 @@
         }
       ],
       "createdAt": "2026-10-17T15:52:09.813Z",
-      "updatedAt": "2026-10-22T04:46:02.927Z"
+      "updatedAt": "2026-10-20T04:36:07.089Z"
     },
     {
       "sku": "1385",
@@ -373343,38 +373361,30 @@
       "updatedAt": "2026-10-22T04:46:02.927Z"
     },
     {
-      "sku": "LED TWINKLE",
-      "slug": "led-twinkle-light-led-twinkle",
-      "name": "LED TWINKLE LIGHT",
-      "categoryId": "electronics",
-      "basePrice": 225,
-      "markupPercentage": 15,
+      "sku": "13067",
+      "slug": "fast-13067",
+      "name": "fast",
+      "categoryId": "repair-kits",
+      "basePrice": 100,
+      "markupPercentage": 18,
       "isPriceOverridden": false,
       "overridePrice": null,
-      "sellingPrice": 258.75,
-      "image": "/assets/p/resistor-kit.jpg",
-      "stock": 0,
-      "blurb": "LED TWINKLE LIGHT (Pc(s)). Genuine InTouch POS inventory. SKU: LED TWINKLE",
+      "sellingPrice": 118,
+      "image": "/assets/p/psu-module.jpg",
+      "stock": 25,
+      "blurb": "fast genuine component.",
       "specs": [
         {
-          "label": "SKU",
-          "value": "LED TWINKLE"
+          "label": "Warranty",
+          "value": "6 Months"
         },
         {
-          "label": "Unit",
-          "value": "Pc(s)"
-        },
-        {
-          "label": "Availability",
-          "value": "Out of Stock"
-        },
-        {
-          "label": "Variation",
-          "value": "DUMMY"
+          "label": "Condition",
+          "value": "Brand New"
         }
       ],
-      "createdAt": "2026-10-21T16:53:35.026Z",
-      "updatedAt": "2026-10-22T04:46:02.927Z"
+      "createdAt": "2026-10-21T13:55:11.586Z",
+      "updatedAt": "2026-10-21T13:55:11.586Z"
     },
     {
       "sku": "13067",
@@ -384288,7 +384298,7 @@
         }
       ],
       "createdAt": "2026-10-17T15:52:09.813Z",
-      "updatedAt": "2026-10-22T04:46:02.927Z"
+      "updatedAt": "2026-10-20T04:36:07.089Z"
     },
     {
       "sku": "101",
@@ -410481,7 +410491,7 @@
       "overridePrice": null,
       "sellingPrice": 770.5,
       "image": "/assets/p/led-kit.jpg",
-      "stock": 2,
+      "stock": 4,
       "blurb": "MINI KEY BOARD (Pc(s)). Genuine InTouch POS inventory. SKU: K1000",
       "specs": [
         {
@@ -410502,7 +410512,7 @@
         }
       ],
       "createdAt": "2026-10-17T15:52:09.813Z",
-      "updatedAt": "2026-10-22T04:46:02.927Z"
+      "updatedAt": "2026-10-20T04:36:07.089Z"
     },
     {
       "sku": "K1000",
@@ -456912,7 +456922,7 @@
         }
       ],
       "createdAt": "2026-10-17T15:52:09.813Z",
-      "updatedAt": "2026-10-22T04:46:02.927Z"
+      "updatedAt": "2026-10-20T04:36:07.089Z"
     },
     {
       "sku": "21AP",
@@ -467829,38 +467839,30 @@
       "updatedAt": "2026-10-22T04:46:02.927Z"
     },
     {
-      "sku": "12718",
-      "slug": "rm-telesonic-remote-12718",
-      "name": "RM TELESONIC REMOTE",
-      "categoryId": "tv-accessories",
-      "basePrice": 120,
-      "markupPercentage": 10,
+      "sku": "13076",
+      "slug": "charger-13076",
+      "name": "charger",
+      "categoryId": "mobile-accessories",
+      "basePrice": 100,
+      "markupPercentage": 20,
       "isPriceOverridden": false,
       "overridePrice": null,
-      "sellingPrice": 132,
-      "image": "/assets/p/remote.jpg",
-      "stock": 0,
-      "blurb": "RM TELESONIC REMOTE (Pc(s)). Genuine InTouch POS inventory. SKU: 12718",
+      "sellingPrice": 120,
+      "image": "/assets/p/psu-module.jpg",
+      "stock": 25,
+      "blurb": "charger genuine component.",
       "specs": [
         {
-          "label": "SKU",
-          "value": "12718"
+          "label": "Warranty",
+          "value": "6 Months"
         },
         {
-          "label": "Unit",
-          "value": "Pc(s)"
-        },
-        {
-          "label": "Availability",
-          "value": "Out of Stock"
-        },
-        {
-          "label": "Variation",
-          "value": "DUMMY"
+          "label": "Condition",
+          "value": "Brand New"
         }
       ],
-      "createdAt": "2026-10-21T16:53:35.026Z",
-      "updatedAt": "2026-10-22T04:46:02.927Z"
+      "createdAt": "2026-10-21T14:19:16.641Z",
+      "updatedAt": "2026-10-21T14:19:16.641Z"
     },
     {
       "sku": "13076",
@@ -485778,7 +485780,7 @@
         }
       ],
       "createdAt": "2026-10-17T15:52:09.813Z",
-      "updatedAt": "2026-10-22T04:46:02.927Z"
+      "updatedAt": "2026-10-20T04:36:07.089Z"
     },
     {
       "sku": "SL936",
@@ -505977,38 +505979,31 @@
       "updatedAt": "2026-10-22T04:46:02.927Z"
     },
     {
-      "sku": "14329",
-      "slug": "t-r67-816-led-universal-pcb-14329",
-      "name": "T.R67.816 LED UNIVERSAL PCB",
-      "categoryId": "electronics",
-      "basePrice": 4100,
+      "sku": "13675",
+      "slug": "fast-charger-13675",
+      "name": "fast charger",
+      "categoryId": "accessories",
+      "basePrice": 100,
       "markupPercentage": 15,
       "isPriceOverridden": false,
       "overridePrice": null,
-      "sellingPrice": 4715,
-      "image": "/assets/p/relay.jpg",
-      "stock": 0,
-      "blurb": "T.R67.816 LED UNIVERSAL PCB (Pc(s)). Genuine InTouch POS inventory. SKU: 14329",
+      "sellingPrice": 115,
+      "image": "/assets/p/psu-module.jpg",
+      "stock": 25,
+      "blurb": "nnnnnnnnnnnnnn",
+      "badge": "jjjjjjjjjjjjjjjjjjjjj",
       "specs": [
         {
-          "label": "SKU",
-          "value": "14329"
+          "label": "Warranty",
+          "value": "6 Months"
         },
         {
-          "label": "Unit",
-          "value": "Pc(s)"
-        },
-        {
-          "label": "Availability",
-          "value": "Out of Stock"
-        },
-        {
-          "label": "Variation",
-          "value": "DUMMY"
+          "label": "Condition",
+          "value": "Brand New"
         }
       ],
-      "createdAt": "2026-10-21T16:53:35.026Z",
-      "updatedAt": "2026-10-22T04:46:02.927Z"
+      "createdAt": "2026-10-17T15:52:09.813Z",
+      "updatedAt": "2026-10-21T14:23:26.190Z"
     },
     {
       "sku": "13675",
@@ -556977,38 +556972,30 @@
       "updatedAt": "2026-10-22T04:46:02.927Z"
     },
     {
-      "sku": "17343",
-      "slug": "vp4-themostat-17343",
-      "name": "VP4 THEMOSTAT",
-      "categoryId": "electronics",
-      "basePrice": 800,
+      "sku": "13064",
+      "slug": "accessories-13064",
+      "name": "Accessories",
+      "categoryId": "accessories",
+      "basePrice": 100,
       "markupPercentage": 15,
       "isPriceOverridden": false,
       "overridePrice": null,
-      "sellingPrice": 920,
-      "image": "/assets/p/led-kit.jpg",
-      "stock": 0,
-      "blurb": "VP4 THEMOSTAT (Pc(s)). Genuine InTouch POS inventory. SKU: 17343",
+      "sellingPrice": 115,
+      "image": "/assets/p/psu-module.jpg",
+      "stock": 25,
+      "blurb": "Accessories genuine component.",
       "specs": [
         {
-          "label": "SKU",
-          "value": "17343"
+          "label": "Warranty",
+          "value": "6 Months"
         },
         {
-          "label": "Unit",
-          "value": "Pc(s)"
-        },
-        {
-          "label": "Availability",
-          "value": "Out of Stock"
-        },
-        {
-          "label": "Variation",
-          "value": "DUMMY"
+          "label": "Condition",
+          "value": "Brand New"
         }
       ],
-      "createdAt": "2026-10-21T16:53:35.026Z",
-      "updatedAt": "2026-10-22T04:46:02.927Z"
+      "createdAt": "2026-10-21T13:48:00.363Z",
+      "updatedAt": "2026-10-21T13:48:00.363Z"
     },
     {
       "sku": "13064",
@@ -568750,7 +568737,7 @@
     }
   ],
   "version": 2,
-  "lastUpdated": "2026-10-22T04:46:02.927Z",
+  "lastUpdated": "2026-10-22T06:11:27.766Z",
   "orders": [
     {
       "id": "LT-794363-3211",
