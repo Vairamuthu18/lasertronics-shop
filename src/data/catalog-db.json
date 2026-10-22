@@ -57,6 +57,110 @@
   ],
   "products": [
     {
+      "sku": "123456",
+      "slug": "fs-123456",
+      "name": "FS",
+      "categoryId": "accessories",
+      "basePrice": 100,
+      "markupPercentage": 15,
+      "isPriceOverridden": false,
+      "overridePrice": null,
+      "sellingPrice": 115,
+      "image": "/assets/p/psu-module.jpg",
+      "stock": 25,
+      "blurb": "FS genuine component.",
+      "specs": [
+        {
+          "label": "Warranty",
+          "value": "6 Months"
+        },
+        {
+          "label": "Condition",
+          "value": "Brand New"
+        }
+      ],
+      "createdAt": "2026-10-21T17:01:47.970Z",
+      "updatedAt": "2026-10-21T17:01:47.970Z"
+    },
+    {
+      "sku": "13076",
+      "slug": "charger-13076",
+      "name": "charger",
+      "categoryId": "mobile-accessories",
+      "basePrice": 100,
+      "markupPercentage": 20,
+      "isPriceOverridden": false,
+      "overridePrice": null,
+      "sellingPrice": 120,
+      "image": "/assets/p/psu-module.jpg",
+      "stock": 25,
+      "blurb": "charger genuine component.",
+      "specs": [
+        {
+          "label": "Warranty",
+          "value": "6 Months"
+        },
+        {
+          "label": "Condition",
+          "value": "Brand New"
+        }
+      ],
+      "createdAt": "2026-10-21T14:19:16.641Z",
+      "updatedAt": "2026-10-21T14:19:16.641Z"
+    },
+    {
+      "sku": "13067",
+      "slug": "fast-13067",
+      "name": "fast",
+      "categoryId": "repair-kits",
+      "basePrice": 100,
+      "markupPercentage": 18,
+      "isPriceOverridden": false,
+      "overridePrice": null,
+      "sellingPrice": 118,
+      "image": "/assets/p/psu-module.jpg",
+      "stock": 25,
+      "blurb": "fast genuine component.",
+      "specs": [
+        {
+          "label": "Warranty",
+          "value": "6 Months"
+        },
+        {
+          "label": "Condition",
+          "value": "Brand New"
+        }
+      ],
+      "createdAt": "2026-10-21T13:55:11.586Z",
+      "updatedAt": "2026-10-21T13:55:11.586Z"
+    },
+    {
+      "sku": "13064",
+      "slug": "accessories-13064",
+      "name": "Accessories",
+      "categoryId": "accessories",
+      "basePrice": 100,
+      "markupPercentage": 15,
+      "isPriceOverridden": false,
+      "overridePrice": null,
+      "sellingPrice": 115,
+      "image": "/assets/p/psu-module.jpg",
+      "stock": 25,
+      "blurb": "Accessories genuine component.",
+      "specs": [
+        {
+          "label": "Warranty",
+          "value": "6 Months"
+        },
+        {
+          "label": "Condition",
+          "value": "Brand New"
+        }
+      ],
+      "createdAt": "2026-10-21T13:48:00.363Z",
+      "updatedAt": "2026-10-21T13:48:00.363Z"
+    },
+    {
       "sku": "9624",
       "slug": "0-0018uf2kv-capacitor-9624",
       "name": "0.0018uf2KV CAPACITOR",
@@ -2778,37 +2882,29 @@
     },
     {
       "sku": "13578",
-      "slug": "1-883-753-72-sony-pcb-13578",
-      "name": "1-883-753-72 SONY PCB",
-      "categoryId": "electronics",
-      "basePrice": 8500,
+      "slug": "65w-13578",
+      "name": "65W",
+      "categoryId": "accessories",
+      "basePrice": 100,
       "markupPercentage": 15,
       "isPriceOverridden": false,
       "overridePrice": null,
-      "sellingPrice": 9775,
-      "image": "/assets/p/relay.jpg",
-      "stock": 1,
-      "blurb": "1-883-753-72 SONY PCB (Pc(s)). Genuine InTouch POS inventory. SKU: 13578",
+      "sellingPrice": 115,
+      "image": "/assets/p/psu-module.jpg",
+      "stock": 25,
+      "blurb": "65W genuine component.",
       "specs": [
         {
-          "label": "SKU",
-          "value": "13578"
+          "label": "Warranty",
+          "value": "6 Months"
         },
         {
-          "label": "Unit",
-          "value": "Pc(s)"
-        },
-        {
-          "label": "Availability",
-          "value": "In Stock"
-        },
-        {
-          "label": "Variation",
-          "value": "DUMMY"
+          "label": "Condition",
+          "value": "Brand New"
         }
       ],
       "createdAt": "2026-10-17T15:52:09.813Z",
-      "updatedAt": "2026-10-20T04:36:07.089Z"
+      "updatedAt": "2026-10-21T15:24:59.014Z"
     },
     {
       "sku": "13189",
@@ -259274,37 +259370,30 @@
     },
     {
       "sku": "13675",
-      "slug": "t-r67-pb801-combo-board-13675",
-      "name": "T.R67.PB801 COMBO BOARD",
-      "categoryId": "electronics",
-      "basePrice": 3900,
+      "slug": "fast-charger-13675",
+      "name": "fast charger",
+      "categoryId": "accessories",
+      "basePrice": 100,
       "markupPercentage": 15,
       "isPriceOverridden": false,
       "overridePrice": null,
-      "sellingPrice": 4485,
-      "image": "/assets/p/resistor-kit.jpg",
-      "stock": 1,
-      "blurb": "T.R67.PB801 COMBO BOARD (Pc(s)). Genuine InTouch POS inventory. SKU: 13675",
+      "sellingPrice": 115,
+      "image": "/assets/p/psu-module.jpg",
+      "stock": 25,
+      "blurb": "nnnnnnnnnnnnnn",
+      "badge": "jjjjjjjjjjjjjjjjjjjjj",
       "specs": [
         {
-          "label": "SKU",
-          "value": "13675"
+          "label": "Warranty",
+          "value": "6 Months"
         },
         {
-          "label": "Unit",
-          "value": "Pc(s)"
-        },
-        {
-          "label": "Availability",
-          "value": "In Stock"
-        },
-        {
-          "label": "Variation",
-          "value": "DUMMY"
+          "label": "Condition",
+          "value": "Brand New"
         }
       ],
       "createdAt": "2026-10-17T15:52:09.813Z",
-      "updatedAt": "2026-10-20T04:36:07.089Z"
+      "updatedAt": "2026-10-21T14:23:26.190Z"
     },
     {
       "sku": "10581",
@@ -293520,7 +293609,7 @@
     }
   ],
   "version": 2,
-  "lastUpdated": "2026-10-21T11:34:12.431Z",
+  "lastUpdated": "2026-10-21T17:01:47.970Z",
   "orders": [
     {
       "id": "LT-794363-3211",

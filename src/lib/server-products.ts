@@ -42,12 +42,18 @@ function mapRecordToProduct(r: ProductRecord): Product {
   };
 }
 
-const CACHE_TTL_MS = 10 * 60 * 1000; // 10 minutes cache
+const CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes cache for external ERP queries
 let cachedProducts: Product[] | null = null;
 let lastFetchTime = 0;
 let isFetchingPromise: Promise<Product[]> | null = null;
 
+// Version-tracked cache tied directly to catalog store lastUpdated timestamp
+let cachedStoreLastUpdated: string | null = null;
+let cachedActiveProducts: Product[] | null = null;
+
 export function invalidateStoreProductsCache(): void {
+  cachedStoreLastUpdated = null;
+  cachedActiveProducts = null;
   cachedProducts = null;
   lastFetchTime = 0;
   isFetchingPromise = null;
@@ -56,22 +62,27 @@ export function invalidateStoreProductsCache(): void {
 export async function getLiveStoreProducts(): Promise<Product[]> {
   const store = loadCatalogStore();
 
-  const now = Date.now();
-  if (cachedProducts && cachedProducts.length > 0 && now - lastFetchTime < CACHE_TTL_MS) {
-    return cachedProducts;
-  }
-
-  // If catalog store already contains synced POS products (more than the initial fallback seeds), serve them directly
+  // If catalog store already contains synced POS / admin products (more than the initial fallback seeds),
+  // serve them with instantaneous reactivity whenever store.lastUpdated changes!
   if (store.products && store.products.length > 50) {
+    if (cachedActiveProducts && cachedStoreLastUpdated === store.lastUpdated) {
+      return cachedActiveProducts;
+    }
+
     const activeProducts = store.products
       .filter((p) => (p.stock || 0) > 0)
       .map(mapRecordToProduct);
 
     if (activeProducts.length > 0) {
-      cachedProducts = activeProducts;
-      lastFetchTime = now;
-      return cachedProducts;
+      cachedActiveProducts = activeProducts;
+      cachedStoreLastUpdated = store.lastUpdated;
+      return cachedActiveProducts;
     }
+  }
+
+  const now = Date.now();
+  if (cachedProducts && cachedProducts.length > 0 && now - lastFetchTime < CACHE_TTL_MS) {
+    return cachedProducts;
   }
 
   if (isFetchingPromise) {
@@ -272,26 +283,41 @@ export const fetchCategoryProductsFn = createServerFn({ method: "GET" })
 export const fetchProductBySlugOrSkuFn = createServerFn({ method: "GET" })
   .validator((slug: string) => slug)
   .handler(async ({ data: slug }): Promise<Product | null> => {
+    const cleanSlug = slug?.trim();
+    if (!cleanSlug) return null;
+    const lowerSlug = cleanSlug.toLowerCase();
+
+    // 1. Direct O(1) lookup in catalog store records
+    const store = loadCatalogStore();
+    if (store && Array.isArray(store.products)) {
+      const directMatch = store.products.find(
+        (p) =>
+          p.slug.toLowerCase() === lowerSlug ||
+          p.sku.toLowerCase() === lowerSlug
+      );
+      if (directMatch) {
+        return mapRecordToProduct(directMatch);
+      }
+    }
+
+    // 2. Lookup in live mapped active products
     const all = await getLiveStoreProducts();
 
-    // 1. Exact match on slug with stock > 0
     const bySlug = all.find(
-      (p) => (p.slug === slug || p.slug.toLowerCase() === slug.toLowerCase()) && (p.stock || 0) > 0,
+      (p) => p.slug === cleanSlug || p.slug.toLowerCase() === lowerSlug,
     );
     if (bySlug) return bySlug;
 
-    // 2. Match on SKU in specs with stock > 0
     const bySku = all.find((p) =>
-      (p.stock || 0) > 0 &&
       p.specs.some(
-        (s) => s.label === "SKU" && (s.value === slug || s.value.toLowerCase() === slug.toLowerCase()),
+        (s) => s.label === "SKU" && (s.value === cleanSlug || s.value.toLowerCase() === lowerSlug),
       ),
     );
     if (bySku) return bySku;
 
     // 3. Fallback direct query to InTouch ERP (only if stock_qty > 0)
     try {
-      const raw = await fetchInTouchProductBySku(slug);
+      const raw = await fetchInTouchProductBySku(cleanSlug);
       if (raw) {
         const qty = parseFloat(raw.stock_qty || "0");
         if (qty > 0) {
@@ -299,7 +325,7 @@ export const fetchProductBySlugOrSkuFn = createServerFn({ method: "GET" })
         }
       }
     } catch (err) {
-      console.error(`Failed to fetch product SKU ${slug} directly from ERP:`, err);
+      console.error(`Failed to fetch product SKU ${cleanSlug} directly from ERP:`, err);
     }
 
     return null;

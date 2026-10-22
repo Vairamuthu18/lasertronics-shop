@@ -442,6 +442,7 @@ function buildInitialData(): CatalogData {
 
 // In-Memory store for fast server execution
 let memoryStore: CatalogData | null = null;
+let lastDiskMtime: number = 0;
 
 function getDbFilePath(): string {
   if (typeof process !== "undefined" && typeof process.cwd === "function" && path && typeof path.resolve === "function") {
@@ -472,11 +473,8 @@ function getDbFilePath(): string {
  * Load or initialize catalog data from storage
  */
 export function loadCatalogStore(): CatalogData {
-  if (memoryStore) {
-    return memoryStore;
-  }
-
   if (typeof window !== "undefined") {
+    if (memoryStore) return memoryStore;
     memoryStore = buildInitialData();
     return memoryStore;
   }
@@ -484,16 +482,27 @@ export function loadCatalogStore(): CatalogData {
   const dbPath = getDbFilePath();
   try {
     if (fs && typeof fs.existsSync === "function" && fs.existsSync(dbPath)) {
+      const stats = fs.statSync(dbPath);
+      const mtime = stats.mtimeMs;
+      // If memoryStore exists and disk file hasn't changed since last read, return in-memory cache
+      if (memoryStore && lastDiskMtime > 0 && mtime <= lastDiskMtime) {
+        return memoryStore;
+      }
       const raw = fs.readFileSync(dbPath, "utf-8");
       const parsed = JSON.parse(raw) as CatalogData;
       if (parsed && Array.isArray(parsed.categories) && Array.isArray(parsed.products) && parsed.products.length > 0) {
         parsed.orders = Array.isArray(parsed.orders) ? parsed.orders : [];
         memoryStore = parsed;
+        lastDiskMtime = mtime;
         return memoryStore;
       }
     }
   } catch (err) {
     console.warn("Could not read catalog-db.json from disk, fallback to bundled data:", err);
+  }
+
+  if (memoryStore) {
+    return memoryStore;
   }
 
   // Initialize and write to disk
@@ -523,6 +532,9 @@ export function saveCatalogStore(data: CatalogData): void {
         fs.mkdirSync(dir, { recursive: true });
       }
       fs.writeFileSync(dbPath, JSON.stringify(memoryStore, null, 2), "utf-8");
+      try {
+        lastDiskMtime = fs.statSync(dbPath).mtimeMs;
+      } catch {}
     }
   } catch (err) {
     console.warn("Could not write catalog-db.json to disk (e.g. read-only env):", err);
